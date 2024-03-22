@@ -22,6 +22,6 @@
 - Especially if you're not comfortable running the schema.sql file
 - Change the sample.env file to just `.env`
 - You will get your `OAUTH_GOOGLE_CLIENT_ID` and `OAUTH_GOOGLE_CLIENT_SECRET` from google, just search for google oauth and create a project
-
+- Then just run `cargo run`
 ---
 

@@ -37,11 +37,6 @@ pub struct Dino {
     user_id: Option<String>,
 }
 
-// #[derive(Debug, Clone, Deserialize, Serialize)]
-// pub struct Dinos {
-//     dinos: Vec<Dino>,
-// }
-
 #[async_std::main]
 async fn main() {
     dotenv::dotenv().ok();
@@ -141,35 +136,6 @@ async fn server(db_pool: PgPool) -> Server<State> {
     app
 }
 
-// #[async_std::test]
-// async fn index_page() -> tide::Result<()> {
-//     use tide::http::{Method, Request as httpRequest, Response, Url};
-
-//     // let dinos_store = Default::default();
-//     let db_pool = make_db_pool().await;
-//     let app = server(db_pool).await;
-//     let url = Url::parse("https://example.com").unwrap();
-//     let req = httpRequest::new(Method::Get, url);
-//     let mut res: Response = app.respond(req).await?;
-//     assert_eq!("ok", res.body_string().await?);
-//     Ok(())
-// }
-
-// #[async_std::test]
-// async fn list_dinos() -> tide::Result<()> {
-//     dotenv::dotenv().ok();
-
-//     let db_url = std::env::var("DATABASE_URL").unwrap();
-//     let db_pool = make_db_pool(db_url).await;
-//     let app = server(db_pool).await;
-
-//     let res = surf::Client::with_http_client(app)
-//         .get("https://example.com/dinos")
-//         .await?;
-
-//     assert_eq!(200, res.status());
-//     Ok(())
-// }
 
 #[cfg(test)]
 mod tests {
